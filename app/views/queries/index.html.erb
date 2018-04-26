@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    width: 75px;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+button[type=submit] {
+    background-color: rgb(61,62,91);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    width: 100%;
+}
+
+button[type=submit]:hover {
+    background-color: rgb(41,52,71);
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+.col-75 {
+    float: right;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+</style>
+
+
+
+<section class="post-head">
+    <h2>Counter</h2>
+    <small>            
+        As on <time> <%=Date.today.to_s(:long)%></time>.
+    </small>
+</section>
+
+<div class="row">
+
+    <div class="col-25">
+        <%= link_to 'Number of Casualties involved in Accidents', url_for(controller: :queries, action: :query4) %>
+        <!--<button id="vehicleAge" type="submit" onclick="getVehiclesAge()">Get Average of Vehicles in accident </button>-->
+</div>
+
+    <div class="col-75">
+        <%= link_to 'Number of Accidents Recorded in Database', url_for(controller: :queries, action: :query1) %>
+        <!--<button id="accident" type="submit" onclick="getAccidents()">Get total Number of Accidents</button>-->
+</div>
+<!-- <div class="col-75">
+<label id="getVehiclesAge"></label>
+</div> -->
+
+</div>  <!-- row >
+
+<!-- <div class="row">
+<div class="col-75">
+<label id="getAccidents"></label>
+</div>
+</div> -->
+
+<div class="row">
+
+    <div class="col-25">
+        <%= link_to 'Number of Vehicles involved in Accidents', url_for(controller: :queries, action: :query3) %>
+        <!--<button id="casualties" type="submit" onclick="getCasualities()">Get total number of Casualities</button>-->
+</div>
+
+    <div class="col-75">
+        <%= link_to 'Average Age of Vehicles involved in Accidents', url_for(controller: :queries, action: :query5) %>
+        <!--<button id="vehicle" type="submit" onclick="getVehicles()">Get total number of Vehicles</button>-->
+</div>
+<!-- <div class="col-75">
+<label id="getCasualities"></label>
+</div> -->
+
+</div> <!-- row >
+
+<!-- <div class="row">
+<div class="col-75">
+<label id="getVehicles"></label>
+</div>
+</div> -->
+
+
